@@ -14,14 +14,10 @@ class MainActivity : AppCompatActivity() {
 
 
         val btnEntrar = findViewById<Button>(R.id.btnEntrar)
-        val inputEmail = findViewById<EditText>(R.id.email)
-        val inputSenha = findViewById<EditText>(R.id.senha)
         val cadastre = findViewById<TextView>(R.id.cadastre)
         btnEntrar.setOnClickListener() {
-            var Email = inputEmail.getText().toString()
 
             val intent = Intent(this, tela_produtos::class.java)
-            intent.putExtra("usuario", Email)
             startActivity(intent)
         }
         cadastre.setOnClickListener() {
