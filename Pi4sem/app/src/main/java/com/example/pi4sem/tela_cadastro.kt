@@ -12,7 +12,6 @@ class tela_cadastro : AppCompatActivity() {
 
 
 
-
         val entre = findViewById<TextView>(R.id.Entre)
         entre.setOnClickListener() {
             val intent = Intent(this, MainActivity::class.java )

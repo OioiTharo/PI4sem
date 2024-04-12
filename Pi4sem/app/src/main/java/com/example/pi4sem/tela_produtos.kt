@@ -42,7 +42,7 @@ class tela_produtos : AppCompatActivity() {
 
         // Configuração do Retrofit
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://350242f4-0f30-4ee2-af47-8abaf73db23a-00-3r57jvc1w2tv5.worf.replit.dev/")
+            .baseUrl("https://350242f4-0f30-4ee2-af47-8abaf73db23a-00-3r57jvc1w2tv5.worf.repl.co/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient)
             .build()
