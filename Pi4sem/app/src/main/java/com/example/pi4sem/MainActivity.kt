@@ -31,6 +31,12 @@ class MainActivity : AppCompatActivity() {
         loginButton.setOnClickListener {
             blockLogin()
         }
+
+        val entre = findViewById<TextView>(R.id.cadastre)
+        entre.setOnClickListener() {
+            val intent = Intent(this, tela_cadastro::class.java )
+            startActivity(intent)
+        }
     }
 
     private fun blockLogin() {

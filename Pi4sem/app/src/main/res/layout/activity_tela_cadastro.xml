@@ -13,7 +13,7 @@
         android:layout_width="330dp"
         android:layout_height="66dp"
         android:layout_marginTop="528dp"
-        android:background="@drawable/buttonredond"
+        android:backgroundTint="@color/blue"
         android:fontFamily="roboto"
         android:lineSpacingMultiplier="0.4"
         android:text="Cadastrar"
@@ -24,10 +24,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <EditText
         android:id="@+id/senhaC"
-        android:layout_width="fill_parent"
+        android:layout_width="330dp"
         android:layout_height="wrap_content"
         android:width="120dp"
         android:height="60dp"
@@ -36,17 +35,17 @@
         android:inputType="textPassword"
         android:maxLines="1"
         android:padding="15dp"
-        android:textSize="18sp"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.558" />
+        app:layout_constraintVertical_bias="0.556" />
 
     <EditText
         android:id="@+id/emailC"
-        android:layout_width="fill_parent"
+        android:layout_width="330dp"
         android:layout_height="wrap_content"
         android:width="120dp"
         android:height="60dp"
@@ -54,17 +53,17 @@
         android:hint="Email"
         android:maxLines="1"
         android:padding="15dp"
-        android:textSize="18sp"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.457" />
 
     <EditText
         android:id="@+id/nome"
-        android:layout_width="fill_parent"
+        android:layout_width="330dp"
         android:layout_height="wrap_content"
         android:width="120dp"
         android:height="60dp"
@@ -72,17 +71,17 @@
         android:hint="Nome"
         android:maxLines="1"
         android:padding="15dp"
-        android:textSize="18sp"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.358" />
+        app:layout_constraintVertical_bias="0.357" />
 
     <EditText
         android:id="@+id/cpf"
-        android:layout_width="fill_parent"
+        android:layout_width="330dp"
         android:layout_height="wrap_content"
         android:width="120dp"
         android:height="60dp"
@@ -90,10 +89,10 @@
         android:hint="CPF"
         android:maxLines="1"
         android:padding="15dp"
-        android:textSize="18sp"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.656" />
