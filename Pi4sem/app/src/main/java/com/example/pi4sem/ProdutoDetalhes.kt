@@ -46,7 +46,7 @@ class ProdutoDetalhes : AppCompatActivity() {
 
     private fun adicionarAoCarrinho(userId: Int, produtoId: Int, quantidade: Int) {
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://3a9ac3fa-33f5-4806-bfb3-ad6556e77562-00-xnfcz6g1i4z5.kirk.repl.co/")
+            .baseUrl("https://61d8d50e-71b0-4159-99d6-78a94cd0f725-00-1i583tb715yhw.riker.replit.dev/")
             .addConverterFactory(ScalarsConverterFactory.create())
             .build()
 
@@ -54,14 +54,14 @@ class ProdutoDetalhes : AppCompatActivity() {
         api.adicionarAoCarrinho(userId, produtoId, quantidade).enqueue(object : Callback<String> {
             override fun onResponse(call: Call<String>, response: Response<String>) {
                 if (response.isSuccessful) {
-                    Toast.makeText(this@ProdutoDetalhesActivity, response.body() ?: "Sucesso!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@ProdutoDetalhes, response.body() ?: "Sucesso!", Toast.LENGTH_SHORT).show()
                 } else {
-                    Toast.makeText(this@ProdutoDetalhesActivity, "Resposta nÃ£o bem-sucedida", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@ProdutoDetalhes, "Resposta nÃ£o bem-sucedida", Toast.LENGTH_SHORT).show()
                 }
             }
 
             override fun onFailure(call: Call<String>, t: Throwable) {
-                Toast.makeText(this@ProdutoDetalhesActivity, "Erro na API: ${t.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@ProdutoDetalhes, "Erro na API: ${t.message}", Toast.LENGTH_SHORT).show()
             }
         })
     }
