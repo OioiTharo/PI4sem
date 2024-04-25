@@ -27,32 +27,34 @@
             app:layout_constraintVertical_bias="0.166" />
 
         <TextView
-        android:id="@+id/nomeProduto"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="10dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imagem_produto"
-        app:layout_constraintTop_toTopOf="parent" />
+            android:id="@+id/nomeProduto"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="3dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imagem_produto"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/descricaoProduto"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:maxLines="2"
-        app:layout_constraintStart_toEndOf="@+id/imagem_produto"
-        app:layout_constraintTop_toBottomOf="@id/nomeProduto"
-        android:background="@drawable/fundo_produto"/>
+        <TextView
+            android:id="@+id/descricaoProduto"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/fundo_produto"
+            android:maxLines="2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imagem_produto"
+            app:layout_constraintTop_toBottomOf="@id/nomeProduto" />
 
         <TextView
             android:id="@+id/valorProduto"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="2dp"
             android:textColor="@color/blue"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -66,7 +68,7 @@
             android:layout_width="41dp"
             android:layout_height="26dp"
             android:layout_marginHorizontal="10dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="2dp"
             android:text="R$"
             android:textColor="@color/blue"
             android:textSize="20sp"
@@ -78,16 +80,15 @@
 
         <Button
             android:id="@+id/btnComprar"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="73dp"
+            android:layout_height="26dp"
             android:layout_marginStart="140dp"
-            android:layout_marginTop="4dp"
             android:backgroundTint="@color/blue"
             android:fontFamily="roboto"
             android:text="+"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="@+id/valorProduto"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/valorProduto"
             app:layout_constraintTop_toBottomOf="@+id/descricaoProduto" />
 
