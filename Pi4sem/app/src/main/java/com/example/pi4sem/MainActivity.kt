@@ -1,5 +1,6 @@
 package com.example.pi4sem
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -60,6 +61,12 @@ class MainActivity : AppCompatActivity() {
                     val loginResponses = response.body()!!
                     if (loginResponses.isNotEmpty()) {
                         val intent = Intent(this@MainActivity, tela_produtos::class.java)
+
+                        val sharedPreferences = getSharedPreferences("Login", Context.MODE_PRIVATE)
+                        val editor = sharedPreferences.edit()
+                        editor.putInt("userId", loginResponses.get(0).USUARIO_ID)
+                        editor.apply()
+
                         startActivity(intent)
                         finish()
                     } else {

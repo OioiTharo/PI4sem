@@ -76,5 +76,3 @@ class ProdutoDetalhes : AppCompatActivity() {
         ): Call<String>
     }
 }
-    }
-}

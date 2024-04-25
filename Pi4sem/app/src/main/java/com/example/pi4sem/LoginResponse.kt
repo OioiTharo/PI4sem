@@ -2,10 +2,10 @@ package com.example.pi4sem
 
 
 data class LoginResponse(
-    val usuarioId: Int,
-    val usuarioNome: String,
-    val usuarioEmail: String,
-    val usuarioSenha: String,
-    val usuarioCpf: String
+    val USUARIO_ID: Int,
+    val USUARIO_NOME: String,
+    val USUARIO_EMAIL: String,
+    val USUARIO_SENHA: String,
+    val USUARIO_CPF: String
 )
 
