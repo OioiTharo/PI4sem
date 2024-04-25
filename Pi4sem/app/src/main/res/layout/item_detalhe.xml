@@ -10,9 +10,9 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:background="@drawable/fundo_produto">
+        android:layout_height="112dp"
+        android:background="@drawable/fundo_produto"
+        android:padding="8dp">
 
         <ImageView
             android:id="@+id/imagem_produto"
@@ -24,14 +24,14 @@
             app:layout_constraintBottom_toBottomOf="@+id/valorProduto"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/nomeProduto"
-            app:layout_constraintVertical_bias="0.166" />
+            app:layout_constraintVertical_bias="0.424" />
 
         <TextView
             android:id="@+id/nomeProduto"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
-            android:layout_marginTop="3dp"
+            android:layout_marginTop="8dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imagem_produto"
@@ -81,7 +81,7 @@
         <Button
             android:id="@+id/btnComprar"
             android:layout_width="73dp"
-            android:layout_height="26dp"
+            android:layout_height="42dp"
             android:layout_marginStart="140dp"
             android:backgroundTint="@color/blue"
             android:fontFamily="roboto"
