@@ -8,7 +8,18 @@
     android:layout_height="match_parent"
     android:padding="16dp">
 
-<TextView
+    <ImageView
+        android:id="@+id/imagem_produto"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="8dp"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNomeProduto" />
+
+    <TextView
     android:id="@+id/txtNomeProduto"
     android:layout_width="0dp"
     android:layout_height="wrap_content"
@@ -22,74 +33,81 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
 
-<TextView
-    android:id="@+id/txtDescricaoProduto"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="10dp"
-    android:gravity="center"
-    android:text="Descricao"
-    android:textColor="#666"
-    android:textSize="16sp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/txtNomeProduto" />
+    <TextView
+        android:id="@+id/txtDescricaoProduto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="Descricao"
+        android:textColor="#666"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagem_produto" />
 
-<TextView
-    android:id="@+id/txtQuantidadeLabel"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:gravity="start"
-    android:text="Quantidade desejada:"
-    android:textSize="16sp"
-    app:layout_constraintBottom_toBottomOf="@+id/editQuantidadeDesejada"
-    app:layout_constraintEnd_toStartOf="@+id/editQuantidadeDesejada"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="@+id/editQuantidadeDesejada" />
+    <TextView
+        android:id="@+id/txtQuantidadeDisponivel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="0"
+        android:textSize="16sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtQuantidadeDisponivelLabel"
+        app:layout_constraintStart_toEndOf="@+id/txtQuantidadeLabel" />
 
-<EditText
-    android:id="@+id/editQuantidadeDesejada"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:hint="0"
-    android:inputType="number"
-    android:minHeight="48dp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toEndOf="@+id/txtQuantidadeLabel"
-    app:layout_constraintTop_toBottomOf="@+id/txtDescricaoProduto" />
+    <Button
+        android:id="@+id/btnAdicionarAoCarrinho"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/blue"
+        android:fontFamily="roboto"
+        android:lineSpacingMultiplier="0.4"
+        android:text="Adicionar"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.608"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtQuantidadeDisponivel" />
 
-<TextView
-    android:id="@+id/txtQuantidadeDisponivelLabel"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Quantidade disponÃ­vel:"
-    android:textSize="16sp"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/editQuantidadeDesejada" />
+    <TextView
+        android:id="@+id/txtQuantidadeDisponivelLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Quantidade disponivel:"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editQuantidadeDesejada" />
 
-<TextView
-    android:id="@+id/txtQuantidadeDisponivel"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="0"
-    android:textSize="16sp"
-    app:layout_constraintBaseline_toBaselineOf="@+id/txtQuantidadeDisponivelLabel"
-    app:layout_constraintStart_toEndOf="@+id/txtQuantidadeLabel" />
+    <EditText
+        android:id="@+id/editQuantidadeDesejada"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:hint="0"
+        android:inputType="number"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtQuantidadeLabel"
+        app:layout_constraintTop_toBottomOf="@+id/txtDescricaoProduto" />
 
-<Button
-    android:id="@+id/btnAdicionarAoCarrinho"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="20dp"
-    android:background="#2C7D8C"
-    android:text="Adicionar ao Carrinho"
-    android:textAllCaps="false"
-    android:textColor="@color/white"
+    <TextView
+        android:id="@+id/txtQuantidadeLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:text="Quantidade desejada:"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/editQuantidadeDesejada"
+        app:layout_constraintEnd_toStartOf="@+id/editQuantidadeDesejada"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editQuantidadeDesejada"
+        app:layout_constraintVertical_bias="0.461" />
 
-    android:backgroundTint="@color/blue"
-    android:fontFamily="roboto"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/txtQuantidadeDisponivel" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

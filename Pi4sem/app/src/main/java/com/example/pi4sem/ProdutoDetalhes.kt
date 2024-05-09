@@ -5,8 +5,12 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import android.content.Context
+import android.content.Intent
+import android.view.View
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
+import androidx.recyclerview.widget.RecyclerView
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -22,11 +26,13 @@ class ProdutoDetalhes : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_produto_detalhes)
 
-
         val nomeProduto = intent.getStringExtra("NOME_PRODUTO") ?: "Nome nÃ£o disponÃ­vel"
         val descricaoProduto = intent.getStringExtra("DESCRICAO_PRODUTO") ?: "DescriÃ§Ã£o nÃ£o disponÃ­vel"
         val produtoId = intent.getIntExtra("ID_PRODUTO", 0)
         val quantidadeDisponivel = intent.getIntExtra("QUANTIDADE_DISPONIVEL", 0)
+        val imagemProguto = intent.getStringExtra("IMAGEM_URL") ?: "imagem indisponivel"
+
+
 
         findViewById<TextView>(R.id.txtNomeProduto).text = nomeProduto
         findViewById<TextView>(R.id.txtDescricaoProduto).text = descricaoProduto
@@ -41,6 +47,11 @@ class ProdutoDetalhes : AppCompatActivity() {
         btnAdicionarCarrinho.setOnClickListener {
             val quantidadeDesejada = editTextQuantidade.text.toString().toIntOrNull() ?: 0
             adicionarAoCarrinho(userId, produtoId, quantidadeDesejada)
+            val intent = Intent(this, Carrinho::class.java)
+            intent.putExtra("userId", userId)
+            startActivity(intent)
+            finish()
+
         }
     }
 
