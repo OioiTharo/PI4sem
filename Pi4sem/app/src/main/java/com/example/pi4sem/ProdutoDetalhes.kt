@@ -11,6 +11,7 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -32,7 +33,11 @@ class ProdutoDetalhes : AppCompatActivity() {
         val quantidadeDisponivel = intent.getIntExtra("QUANTIDADE_DISPONIVEL", 0)
         val imagemProguto = intent.getStringExtra("IMAGEM_URL") ?: "imagem indisponivel"
 
-
+        Glide.with(this)
+            .load(imagemProguto)
+            .placeholder(R.drawable.ic_launcher_background) // placeholder
+            .error(com.google.android.material.R.drawable.mtrl_ic_error) // indica erro
+            .into(findViewById<ImageView>(R.id.imagem_produto))
 
         findViewById<TextView>(R.id.txtNomeProduto).text = nomeProduto
         findViewById<TextView>(R.id.txtDescricaoProduto).text = descricaoProduto
