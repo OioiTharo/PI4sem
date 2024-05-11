@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Pi4sem"
         tools:targetApi="31">
         <activity
+            android:name=".PaymentActivity"
+            android:exported="false" />
+        <activity
             android:name=".Carrinho"
             android:exported="false" />
         <activity

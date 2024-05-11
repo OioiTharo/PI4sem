@@ -6,7 +6,8 @@
     android:id="@+id/layoutPrincipal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:background="@color/white"
+    android:padding="15dp">
 
     <ImageView
         android:id="@+id/imagem_produto"
@@ -65,7 +66,7 @@
         android:backgroundTint="@color/blue"
         android:fontFamily="roboto"
         android:lineSpacingMultiplier="0.4"
-        android:text="Adicionar"
+        android:text="Comprar"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="18sp"
