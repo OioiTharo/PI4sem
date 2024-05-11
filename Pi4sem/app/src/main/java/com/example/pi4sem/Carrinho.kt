@@ -70,7 +70,7 @@ class Carrinho : AppCompatActivity() {
     }
 
     fun updateTotal() {
-        total = items.sumOf { it.produtoPreco * it.quantidadeDisponivel }
+        total = items.sumOf { it.produtoPreco.toDouble() * it.quantidadeDisponivel }
         runOnUiThread {
             totalTextView.text = "Total: R$${String.format("%.2f", total)}"
         }

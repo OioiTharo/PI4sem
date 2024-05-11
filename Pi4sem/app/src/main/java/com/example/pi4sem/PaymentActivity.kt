@@ -10,6 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import retrofit2.http.Body
 import retrofit2.http.Field
 import retrofit2.http.POST
 
@@ -28,11 +29,11 @@ class PaymentActivity : AppCompatActivity() {
         val finishPaymentButton: Button = findViewById(R.id.finishPaymentButton)
 
         finishPaymentButton.setOnClickListener {
-            if (validateCardDetails(cardNumberInput.text.toString(), cardExpirationInput.text.toString(), cardCVCInput.text.toString())) {
+            //if (validateCardDetails(cardNumberInput.text.toString(), cardExpirationInput.text.toString(), cardCVCInput.text.toString())) {
                 enviaOrdem(userId, totalValue, productList)
-            } else {
-                Toast.makeText(this, "Detalhes do cartÃ£o invÃ¡lidos", Toast.LENGTH_LONG).show()
-            }
+            //} else {
+            //    Toast.makeText(this, "Detalhes do cartÃ£o invÃ¡lidos", Toast.LENGTH_LONG).show()
+            //}
         }
     }
 
