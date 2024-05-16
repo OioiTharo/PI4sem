@@ -38,8 +38,9 @@ class CartAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = items[position]
         holder.productName.text = item.produtoNome
-        // CorreÃ§Ã£o: Assegurando que o preÃ§o Ã© tratado como um nÃºmero para formataÃ§Ã£o
-        holder.productPrice.text = String.format("R$%.2f", item.produtoPreco.toDouble())
+        // CorreÃƒÂ§ÃƒÂ£o: Assegurando que o preÃƒÂ§o ÃƒÂ© tratado como um nÃƒÂºmero para formataÃƒÂ§ÃƒÂ£o
+        holder.productPrice.text = item.produtoPreco?.let { String.format("R$%.2f", it.toDouble()) }
+
         holder.productQuantity.text = "Qtd: ${item.quantidadeDisponivel}"
         Glide.with(context).load(item.imagemUrl).into(holder.productImage)
 
@@ -51,13 +52,17 @@ class CartAdapter(
     private fun removeItemFromCart(item: Produto, position: Int) {
         val retrofit = getRetrofit()
         val api = retrofit.create(CartApiService::class.java)
-        api.deleteCartItem(item.produtoId, userId = 271).enqueue(object : Callback<Void> {
+
+        val sharedPreferences = context.getSharedPreferences("Login", Context.MODE_PRIVATE)
+        val userId = sharedPreferences.getInt("userId", 0)
+
+        api.deleteCartItem(item.produtoId, userId).enqueue(object : Callback<Void> {
             override fun onResponse(call: Call<Void>, response: Response<Void>) {
                 if (response.isSuccessful) {
                     items.removeAt(position)
                     notifyItemRemoved(position)
                     notifyItemRangeChanged(position, items.size)
-                    updateTotal()  // Chamada da funÃ§Ã£o para atualizar o total
+                    updateTotal()  // Chamada da funÃƒÂ§ÃƒÂ£o para atualizar o total
                     Toast.makeText(context, "Item deletado com sucesso", Toast.LENGTH_SHORT).show()
                 } else {
                     Toast.makeText(context, "Falha ao deletar o item", Toast.LENGTH_SHORT).show()
@@ -71,7 +76,7 @@ class CartAdapter(
     }
 
     private fun getRetrofit(): Retrofit = Retrofit.Builder()
-        .baseUrl("https://951c7ccc-dfe0-45e1-9cb8-a93dbb2f287f-00-2vz8o7pqwf4y2.janeway.repl.co/")
+        .baseUrl("https://https://951c7ccc-dfe0-45e1-9cb8-a93dbb2f287f-00-2vz8o7pqwf4y2.janeway.repl.co/")
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 

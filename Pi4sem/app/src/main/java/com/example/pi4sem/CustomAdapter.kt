@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+
 class CustomAdapter(private val dataSet: List<Produto>) :
     RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
 
@@ -18,7 +19,6 @@ class CustomAdapter(private val dataSet: List<Produto>) :
         val valor: TextView = view.findViewById(R.id.valorProduto)
         val imagem: ImageView = view.findViewById(R.id.imagem_produto)
         val btnComprar: Button = view.findViewById(R.id.btnComprar)
-
     }
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
@@ -34,7 +34,7 @@ class CustomAdapter(private val dataSet: List<Produto>) :
 
         viewHolder.nome.text = produto.produtoNome
         viewHolder.descricao.text = produto.produtoDesc
-        viewHolder.valor.text = produto.produtoPreco
+        viewHolder.valor.text = produto.produtoPreco.toString()
 
         Glide.with(viewHolder.itemView.context)
             .load(produto.imagemUrl)
@@ -45,9 +45,9 @@ class CustomAdapter(private val dataSet: List<Produto>) :
         viewHolder.btnComprar.setOnClickListener {
             val intent = Intent(viewHolder.itemView.context, ProdutoDetalhes::class.java)
             intent.putExtra("ID_PRODUTO", produto.produtoId)
-            intent.putExtra("IMAGEM_URL",produto.imagemUrl)
             intent.putExtra("NOME_PRODUTO", produto.produtoNome)
             intent.putExtra("DESCRICAO_PRODUTO", produto.produtoDesc)
+            intent.putExtra("IMAGEM_URL", produto.imagemUrl)
             intent.putExtra("QUANTIDADE_DISPONIVEL", produto.quantidadeDisponivel)
             viewHolder.itemView.context.startActivity(intent)
         }

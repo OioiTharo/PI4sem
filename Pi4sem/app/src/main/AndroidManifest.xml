@@ -21,9 +21,6 @@
             android:name=".Carrinho"
             android:exported="false" />
         <activity
-            android:name=".Carinho"
-            android:exported="false" />
-        <activity
             android:name=".ProdutoDetalhes"
             android:exported="false" />
         <activity

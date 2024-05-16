@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import retrofit2.Call
@@ -32,12 +31,6 @@ class MainActivity : AppCompatActivity() {
         loginButton.setOnClickListener {
             blockLogin()
         }
-
-        val entre = findViewById<TextView>(R.id.cadastre)
-        entre.setOnClickListener() {
-            val intent = Intent(this, tela_cadastro::class.java )
-            startActivity(intent)
-        }
     }
 
     private fun blockLogin() {
@@ -60,19 +53,22 @@ class MainActivity : AppCompatActivity() {
                 if (response.isSuccessful && response.body() != null) {
                     val loginResponses = response.body()!!
                     if (loginResponses.isNotEmpty()) {
-                        val intent = Intent(this@MainActivity, tela_produtos::class.java)
+
+                        val idUser=loginResponses.get(0).USUARIO_ID
 
                         val sharedPreferences = getSharedPreferences("Login", Context.MODE_PRIVATE)
-                        val editor = sharedPreferences.edit()
-                        editor.putInt("userId", loginResponses.get(0).USUARIO_ID)
-                        editor.apply()
+                        sharedPreferences.edit().apply {
+                            putInt("userId", idUser.toInt())
+                            apply()
+                        }
 
+                        val intent = Intent(this@MainActivity, tela_produtos::class.java)
                         startActivity(intent)
                         finish()
                     } else {
                         Toast.makeText(
                             this@MainActivity,
-                            "Usuario ou senha invalidos",
+                            "UsuÃƒÂ¡rio ou senha invÃƒÂ¡lidos",
                             Toast.LENGTH_LONG
                         ).show()
                     }
