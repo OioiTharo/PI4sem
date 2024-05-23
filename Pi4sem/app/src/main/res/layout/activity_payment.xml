@@ -15,6 +15,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="44dp"
         android:layout_marginEnd="95dp"
+        android:textStyle="bold"
         android:gravity="center_horizontal"
         android:minHeight="48dp"
         android:text="          Total"
@@ -33,6 +34,7 @@
         android:gravity="center_horizontal"
         android:textAlignment="textEnd"
         android:minHeight="48dp"
+        android:textStyle="bold"
         android:text="R$ "
         android:textSize="18sp" />
 
