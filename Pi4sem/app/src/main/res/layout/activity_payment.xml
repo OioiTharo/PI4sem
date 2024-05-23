@@ -9,26 +9,29 @@
 
     <TextView
         android:id="@+id/totalValueText"
-        android:layout_width="match_parent"
+        android:layout_width="153dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="          Total"
-        android:textSize="18sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="95dp"
         android:gravity="center_horizontal"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:text="          Total"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/rS"
-        android:layout_width="match_parent"
+        android:layout_width="137dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_above="@+id/cardNumberInput"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="1dp"
         android:layout_marginBottom="16dp"
+        android:layout_toStartOf="@+id/totalValueText"
         android:gravity="center_horizontal"
+        android:textAlignment="textEnd"
         android:minHeight="48dp"
         android:text="R$ "
         android:textSize="18sp" />
@@ -79,12 +82,14 @@
         android:layout_below="@id/cardCVCInput"
         android:layout_margin="16dp"
 
+        android:layout_marginTop="163dp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="@color/blue"
         android:fontFamily="roboto"
         android:lineSpacingMultiplier="0.4"
+        android:text="@string/finish_payment"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="18sp"
-        android:text="@string/finish_payment" />
+        android:textSize="18sp" />
 
 </RelativeLayout>
