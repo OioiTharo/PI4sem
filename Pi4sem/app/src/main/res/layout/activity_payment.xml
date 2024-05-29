@@ -7,91 +7,102 @@
     android:padding="15dp"
     tools:context=".PaymentActivity">
 
-    <TextView
-        android:id="@+id/totalValueText"
-        android:layout_width="153dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="95dp"
-        android:textStyle="bold"
-        android:gravity="center_horizontal"
-        android:minHeight="48dp"
-        android:text="          Total"
-        android:textSize="18sp" />
+    <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/rS"
-        android:layout_width="137dp"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/cardNumberInput"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="16dp"
-        android:layout_toStartOf="@+id/totalValueText"
-        android:gravity="center_horizontal"
-        android:textAlignment="textEnd"
-        android:minHeight="48dp"
-        android:textStyle="bold"
-        android:text="R$ "
-        android:textSize="18sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
 
-    <EditText
-        android:id="@+id/cardNumberInput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/totalValueText"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:hint="@string/card_number"
-        android:inputType="number"
-        android:minHeight="48dp" />
+            <TextView
+                android:id="@+id/totalValueText"
+                android:layout_width="153dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="44dp"
+                android:layout_marginEnd="95dp"
+                android:gravity="center_horizontal"
+                android:minHeight="48dp"
+                android:text="R$          Total"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/cardExpirationInput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/cardNumberInput"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:hint="@string/card_expiration"
-        android:inputType="date"
-        android:minHeight="48dp" />
+                <EditText
+                android:id="@+id/cardNumberInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/totalValueText"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:hint="@string/card_number"
+                android:inputType="number"
+                android:minHeight="48dp" />
 
-    <EditText
-        android:id="@+id/cardCVCInput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/cardExpirationInput"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:hint="@string/cvc"
-        android:inputType="number"
-        android:minHeight="48dp" />
+                <EditText
+                android:id="@+id/cardExpirationInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cardNumberInput"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:hint="@string/card_expiration"
+                android:inputType="date"
+                android:minHeight="48dp" />
 
-    <Button
-        android:id="@+id/finishPaymentButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/cardCVCInput"
-        android:layout_margin="16dp"
+                <EditText
+                android:id="@+id/cardCVCInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cardExpirationInput"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:hint="@string/cvc"
+                android:inputType="number"
+                android:minHeight="48dp" />
 
-        android:layout_marginTop="163dp"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="@color/blue"
-        android:fontFamily="roboto"
-        android:lineSpacingMultiplier="0.4"
-        android:text="@string/finish_payment"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="18sp" />
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="Endereço de cobrança"
+                android:textAlignment="center" />
 
+            <RadioGroup
+                android:id="@+id/addressRadioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/finishPaymentButton"
+                android:layout_below="@+id/cardCVCInput"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="34dp" />
+
+                <Button
+                android:id="@+id/finishPaymentButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="40dp"
+                android:backgroundTint="@color/blue"
+                android:fontFamily="roboto"
+                android:lineSpacingMultiplier="0.4"
+                android:text="@string/finish_payment"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+                </LinearLayout>
+            </ScrollView>
 </RelativeLayout>
