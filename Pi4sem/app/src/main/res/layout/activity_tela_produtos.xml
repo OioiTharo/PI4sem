@@ -13,7 +13,7 @@
         android:layout_width="330dp"
         android:layout_height="50dp"
         android:background="@drawable/barsearch"
-        android:hint="Search"
+        android:hint="Pesquisar..."
         android:paddingLeft="40dp"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
