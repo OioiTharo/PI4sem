@@ -1,3 +1,3 @@
 # PI4sem
 
-## Thais Rodrigues
+## Thais Rodrigues, Luan da Silva e Lucas Noé
