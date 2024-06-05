@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Pi4sem</string>
     <string name="entrar">Entrar</string>
-    <string name="card_number">Numero do Cartao</string>
+    <string name="card_number">Numero do Cartão</string>
     <string name="card_expiration">Data de Validade (MM/AA)</string>
     <string name="cvc">CVC</string>
     <string name="finish_payment">Finalizar Pagamento</string>
-    <string name="total_value">Valor Total: $0.00</string>
+    <string name="total_value">Valor Total: R$0.00</string>
 </resources>
