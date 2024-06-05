@@ -87,8 +87,8 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this@MainActivity, "Error: ${t.message}", Toast.LENGTH_LONG).show()
             }
         })
-        val entre = findViewById<TextView>(R.id.cadastre)
-        entre.setOnClickListener() {
+        val cadastre = findViewById<TextView>(R.id.cadastre)
+        cadastre.setOnClickListener() {
             val intent = Intent(this, tela_cadastro::class.java )
             startActivity(intent)
         }
